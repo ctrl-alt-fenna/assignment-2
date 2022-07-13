@@ -1,0 +1,19 @@
+[
+    {
+      "id": 1,
+      "username": "dewaldels",
+      "translations": [
+        "hello world",
+        "react is fun"
+      ]
+    },
+    {
+        "id":2,
+        "username": "fransijn",
+        "translation":[
+            "this is a test",
+            "random entry",
+            "check check hello"
+        ]
+    }
+]
