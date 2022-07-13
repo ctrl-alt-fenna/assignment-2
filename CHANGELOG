@@ -1,0 +1,11 @@
+# Version 1.0
+* Initialised project using Create React App
+* Deleted unused logo, animations etc.
+* Created basic file structure
+* Uploaded Figma-created component tree
+* Added Heroku app
+# Version 1.1
+* Added basic routing
+* Added basic hooks
+* Updated README
+* Added API key to Heroku
