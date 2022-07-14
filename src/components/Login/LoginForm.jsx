@@ -1,4 +1,5 @@
 import {useForm} from 'react-hook-form'
+import { useState } from 'react'
 import { loginUser } from '../../api/user'
 import React from 'react'
 const usernameConfig = {
@@ -9,7 +10,7 @@ function LoginForm() {
     // Destructuring of useForm() hook so we can use register, handleSubmit and formState later on 
     const { register, handleSubmit, formState: { errors }} = useForm()
 
-    const [loading, setLoading] = useSate(false)
+    const [loading, setLoading] = useState(false)
     /*  Function that sends data
         INPUT: Data object
         OUTPUT: Sends data to API to retreive login info
@@ -40,7 +41,7 @@ function LoginForm() {
             <form onSubmit={handleSubmit(handleonSubmit)}>
                 <input type="text" placeholder='Username' {...register("username",usernameConfig)} />
                 <button type="submit" disabled={loading}>Submit</button>
-                {<p> loading && <p>Logging in...</p></p>}
+                {loading && <p>Logging in...</p>}
             </form>
         </>
     )
