@@ -11,6 +11,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
+        <h1 id="title">Lost in Translation</h1>
         <Routes>
           <Route path="/" element={< Login/>} />
           <Route path="/translate" element={< Translate />} />
