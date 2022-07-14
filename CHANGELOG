@@ -9,3 +9,8 @@
 * Added basic hooks
 * Updated README
 * Added API key to Heroku
+# Version 1.2
+* Added login form
+* User can enter username and login
+* User can create new user if username doesn't exist
+* User gets redirected to profile page when succesfully logged in

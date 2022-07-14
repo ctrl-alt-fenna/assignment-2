@@ -3,7 +3,9 @@
 Translation web application using React.
 
 # About This Project
-
+* The user can login with a valid username
+* If the username is not valid, create new user
+* Userdata can be retrieved
 # Screenshots?
 
 # Authors and Acknowledgements
