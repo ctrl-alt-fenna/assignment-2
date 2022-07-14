@@ -1,7 +1,7 @@
 import './App.css';
 
 import{BrowserRouter, Route, Routes} from 'react-router-dom';
-
+import Logo from "../src/img/Logo.png"
 import Login from './views/Login';
 import Profile from './views/Profile';
 import React from 'react';
@@ -12,7 +12,8 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <h1>hello here is will a navbar</h1>
+        <h1 id="title">Lost in Translation</h1>
+        <img src={Logo} width="10%"/>
         <Routes>
           <Route path="/" element={< Login/>} />
           <Route path="/translate" element={< Translate />} />
