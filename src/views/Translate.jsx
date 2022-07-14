@@ -1,7 +1,8 @@
 import React from "react"
+import withAuth from '../hoc/withAuth'
 const Translate = () => {
   return (
     <h1>Translate</h1>
   )
 }
-export default Translate
+export default withAuth(Translate)
