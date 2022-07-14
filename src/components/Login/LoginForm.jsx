@@ -60,7 +60,7 @@ function LoginForm() {
         <h2>Login</h2>
             <form onSubmit={handleSubmit(handleonSubmit)}>
                 <input type="text" placeholder='Enter your username...' {...register("username",usernameConfig)} />
-                <button id="btn" type="submit" disabled={loading}>Submit</button>
+                <button id="submit-btn" type="submit" disabled={loading}>Submit</button>
                 { errorMessage }
                 {loading && <p>Logging in...</p>}
                 {apiError && <p>{apiError}</p>}

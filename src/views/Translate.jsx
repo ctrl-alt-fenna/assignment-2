@@ -1,7 +1,10 @@
 import React from "react"
+import TranslationForm from "../components/Translation/TranslationForms"
 const Translate = () => {
   return (
-    <h1>Translate</h1>
+    <>
+    <TranslationForm/>
+    </>
   )
 }
 export default Translate
