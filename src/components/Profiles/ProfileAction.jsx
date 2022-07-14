@@ -1,6 +1,8 @@
 const ProfileAction = () => {
   return (
-    <p>action</p>
+    <>
+      <h1>Profile action</h1>
+    </>
   )
 }
 export default ProfileAction
