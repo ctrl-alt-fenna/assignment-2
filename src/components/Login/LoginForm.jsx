@@ -1,15 +1,17 @@
+import React, {useEffect, useState} from 'react'
+import { storageRead, storageSave } from '../../utils/storage'
+
+import { STORAGE_KEY_USER } from '../../const/storageKeys'
+import { loginUser } from '../../api/user'
 import {useForm} from 'react-hook-form'
 import {useNavigate} from 'react-router-dom'
-import React, {useEffect, useState} from 'react'
-import { loginUser } from '../../api/user'
-import { storageRead, storageSave } from '../../utils/storage'
 import { useUser } from '../../context/UserContext'
 const usernameConfig = {
     required: true,
     minLength: 2
 }
 function LoginForm() {
-    // Destructuring of useForm() hook so we can use register, handleSubmit and formState later on 
+    // Destructuring of useForm() hook so we can use register, handleSubmit and formState later on
     const { register, handleSubmit, formState: { errors }} = useForm()
     const {user, setUser} = useUser()
     const navigate = useNavigate()
@@ -38,7 +40,7 @@ function LoginForm() {
         if (error !== null)
             setApiError(error)
         if (userResponse !== null){
-            storageSave('translation-user', userResponse)
+            storageSave(STORAGE_KEY_USER, userResponse)
             setUser(userResponse)
         }
         setLoading(false)

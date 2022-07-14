@@ -7,4 +7,4 @@ const Translate = () => {
     </>
   )
 }
-export default Translate
+export default withAuth(Translate)
