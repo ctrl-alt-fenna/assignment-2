@@ -10,9 +10,7 @@ export const useUser = () => {
     return useContext(UserContext)
 }
 const UserProvider = ({children}) => {
-  //change magic string to API
-    const [ user, setUser] = useState( storageRead(STORAGE_KEY_USER))
-
+    const [ user, setUser] = useState(null )
     const state = {
         user,
         setUser

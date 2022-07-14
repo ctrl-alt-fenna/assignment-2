@@ -14,7 +14,7 @@ const Profile = () => {
       <h1>Profile</h1>
       <ProfileHeader username={user.username}/>
       <ProfileAction/>
-      <ProfileTranslateHistory/>
+      <ProfileTranslateHistory translations ={user.translations}/>
     </>
   )
 }

@@ -1,6 +1,6 @@
-import UserProvider from "./UserContext"
 import React from "react"
-const AppContext = ({children}) => {   
+import UserProvider from "./UserContext"
+const AppContext = ({children}) => {
     return (
         <UserProvider>
             {children}

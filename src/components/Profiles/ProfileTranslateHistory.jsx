@@ -1,7 +1,17 @@
+import ProfileTranslationHistoryItem from './ProfileTranslationHistoryItem';
 import React from 'react'
-const ProfileTranslateHistory = () => {
+const ProfileTranslateHistory = ({translations}) => {
+
+  const translatedHistory = translations.map(
+    (aHistory, index) => <ProfileTranslationHistoryItem key={index + '_' + aHistory} aHistory={aHistory} /> )
+
   return (
-    <h1>Translated History</h1>
+    <section>
+      <h4>Your history translations</h4>
+      <ul>
+        {translatedHistory}
+      </ul>
+    </section>
   )
 }
 export default ProfileTranslateHistory
