@@ -1,7 +1,9 @@
 import {useForm} from 'react-hook-form'
-import { useState } from 'react'
+import {useNavigate} from 'react-router-dom'
+import React, {useEffect, useState} from 'react'
 import { loginUser } from '../../api/user'
-import React from 'react'
+import { storageRead, storageSave } from '../../utils/storage'
+import { useUser } from '../../context/UserContext'
 const usernameConfig = {
     required: true,
     minLength: 2
@@ -9,8 +11,21 @@ const usernameConfig = {
 function LoginForm() {
     // Destructuring of useForm() hook so we can use register, handleSubmit and formState later on 
     const { register, handleSubmit, formState: { errors }} = useForm()
-
+    const {user, setUser} = useUser()
+    const navigate = useNavigate()
+    // Make it possible to display loading/error states
     const [loading, setLoading] = useState(false)
+    const [apiError, setApiError] = useState(null)
+
+    // Side effects
+    useEffect(() => {
+        if (user !== null){
+            navigate('/profile')
+        }
+    }, [user, navigate])
+
+    // Event handlers
+
     /*  Function that sends data
         INPUT: Data object
         OUTPUT: Sends data to API to retreive login info
@@ -18,9 +33,14 @@ function LoginForm() {
     const handleonSubmit = async ({username}) => {
         setLoading(true)
         // Send data to API
-        const [error, user] = await loginUser(username)
-        console.log('Error: ', error)
-        console.log('User: ', user)
+        const [error, userResponse] = await loginUser(username)
+        // Set error message only if there is one so page doesn't need to rerender unnecessarily
+        if (error !== null)
+            setApiError(error)
+        if (userResponse !== null){
+            storageSave('translation-user', userResponse)
+            setUser(userResponse)
+        }
         setLoading(false)
     }
     /*  Function to deal with errors
