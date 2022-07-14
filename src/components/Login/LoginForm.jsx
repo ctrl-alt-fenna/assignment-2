@@ -9,15 +9,18 @@ function LoginForm() {
     // Destructuring of useForm() hook so we can use register, handleSubmit and formState later on 
     const { register, handleSubmit, formState: { errors }} = useForm()
 
+    const [loading, setLoading] = useSate(false)
     /*  Function that sends data
         INPUT: Data object
         OUTPUT: Sends data to API to retreive login info
     */
     const handleonSubmit = async ({username}) => {
+        setLoading(true)
         // Send data to API
         const [error, user] = await loginUser(username)
         console.log('Error: ', error)
         console.log('User: ', user)
+        setLoading(false)
     }
     /*  Function to deal with errors
         INPUT: Any errors that came up
@@ -36,8 +39,8 @@ function LoginForm() {
         <h1>What is your name?</h1>
             <form onSubmit={handleSubmit(handleonSubmit)}>
                 <input type="text" placeholder='Username' {...register("username",usernameConfig)} />
-                <button type="submit">Submit</button>
-                { errorMessage }
+                <button type="submit" disabled={loading}>Submit</button>
+                {<p> loading && <p>Logging in...</p></p>}
             </form>
         </>
     )
