@@ -15,3 +15,7 @@ export const storageRead = (key) => {
     if (data) return JSON.parse(key)
     return null
 }
+
+export const storageDelete = key => {
+  localStorage.removeItem(key)
+}
