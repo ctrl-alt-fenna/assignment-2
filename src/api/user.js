@@ -5,7 +5,7 @@ const apiURL = process.env.REACT_APP_API_URL
     INPUT: A username to check
     OUTPUT: The userdata, or an error of user does not exist in database
 */
-const checkForUser = async (username) => {
+export const checkForUser = async (username) => {
     try{
         const response = await fetch(`${apiURL}?username=${username}`)
         if (!response.ok)
