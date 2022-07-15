@@ -54,5 +54,6 @@ export const loginUser = async (username) => {
     // Check if user exists
     if (user.length > 0) return [null, user.pop()]
     // Creates new user because username doesnt exist
-    return await createUser(username)
+    if (window.confirm('Do you want to make a new acount?')) return await createUser(username)
+    else return [null, null]
 }
