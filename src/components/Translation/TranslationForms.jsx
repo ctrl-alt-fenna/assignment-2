@@ -4,7 +4,7 @@ import { storageRead, storageSave } from '../../utils/storage'
 import { STORAGE_KEY_USER } from '../../const/storageKeys'
 import { updateTranslations } from '../../api/translate'
 import {checkForUser } from "../../api/user"
-// import withAuth from '../../hoc/withAuth'
+import withAuth from '../../hoc/withAuth'
 import {useForm} from 'react-hook-form'
 import Signs from '../Signs/Signs'
 const translationConfig = {
@@ -65,4 +65,4 @@ const TranslationForm = ( { onOrder}) => {
     )
 }
 }
-export default TranslationForm
+export default withAuth(TranslationForm)
