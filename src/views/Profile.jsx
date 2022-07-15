@@ -2,7 +2,7 @@ import ProfileAction from '../components/Profiles/ProfileAction';
 import ProfileHeader from "../components/Profiles/ProfileHeader";
 import ProfileTranslateHistory from "../components/Profiles/ProfileTranslateHistory";
 import React from "react"
-import {useUser} from "../context/UserContext"
+import { useUser } from "../context/UserContext"
 import withAuth from '../hoc/withAuth';
 
 const Profile = () => {
@@ -13,7 +13,7 @@ const Profile = () => {
     <>
       <h1>Profile</h1>
       <ProfileHeader username={user.username}/>
-      <ProfileAction/>
+      <ProfileAction />
       <ProfileTranslateHistory translations ={user.translations}/>
     </>
   )
