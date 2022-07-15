@@ -8,4 +8,4 @@ const Translate = () => {
     </>
   )
 }
-export default withAuth(Translate)
+export default Translate

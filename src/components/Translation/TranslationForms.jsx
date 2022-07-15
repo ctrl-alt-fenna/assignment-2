@@ -1,70 +1,56 @@
+import React, {useState} from 'react'
+// import { storageRead, storageSave } from '../../utils/storage'
+// import { STORAGE_KEY_USER } from '../../const/storageKeys'
+// import { sendTranslation } from '../../api/translate'
+// import withAuth from '../../hoc/withAuth'
 import {useForm} from 'react-hook-form'
-import {useNavigate} from 'react-router-dom'
-import React, {useEffect, useState} from 'react'
-import { loginUser } from '../../api/user'
-import { storageRead, storageSave } from '../../utils/storage'
-import { useUser } from '../../context/UserContext'
-const textConfig = {
-    required: true,
-    pattern: /[A-Za-z]/
+import Signs from '../Signs/Signs'
+const translationConfig = {
+    minLength: 1
 }
-function TranslationForm() {
-    // Destructuring of useForm() hook so we can use register, handleSubmit and formState later on 
-    const { register, handleSubmit, formState: { errors }} = useForm()
-    const {user, setUser} = useUser()
-    const navigate = useNavigate()
+function TranslationForm()
+{
+    let letterArray =['']
+    let lowerCaseTranslation = ""
+    const { register, handleSubmit} = useForm()
+    const [translation , setTranslation] = useState('')
     // Make it possible to display loading/error states
     const [loading, setLoading] = useState(false)
-    const [apiError, setApiError] = useState(null)
+    // const [apiError, setApiError] = useState(null)
 
-    // Side effects
-    useEffect(() => {
-        if (user === null){
-            navigate('/login')
-        }
-    }, [user, navigate])
-
-    // Event handlers
-
-    /*  Function that sends data
-        INPUT: Data object
-        OUTPUT: Sends data to API to retreive login info
-    */
-    const handleonSubmit = async ({username}) => {
+    const handleonSubmit = (data) => {
         setLoading(true)
-        // Send data to API
-        const [error, userResponse] = await loginUser(username)
-        // Set error message only if there is one so page doesn't need to rerender unnecessarily
-        if (error !== null)
-            setApiError(error)
-        if (userResponse !== null){
-            storageSave('translation-user', userResponse)
-            setUser(userResponse)
-        }
+        console.log(data)
         setLoading(false)
     }
-    /*  Function to deal with errors
-        INPUT: Any errors that came up
-        OUTPUT: <p> element that contains the errormessage
+
+    /*  Function that sends data to retrieve images
+        INPUT: Event (Text input) change
+        OUTPUT: Printed images of given letters
     */
-    const errorMessage = (() => {
-        if (!errors.username)
-            return null
-        if (errors.username.type === 'required')
-            return <p></p>
-        if (errors.username.type === 'minLength')
-            return <p>Username must be of at least 2 characters</p>
-    })()
+   const handleChange = (event) => {
+    letterArray = splitLetter()
+    setTranslation(event.target.value)
+   }
+   /*   Helper-function to split sentence into letters
+        INPUT: Only uses translation
+        OUTPUT: Returns letterArray, an array of letters split from translation (user input)
+   */
+   const splitLetter = () => {
+    lowerCaseTranslation = translation.toLowerCase()
+    letterArray = lowerCaseTranslation.split("")
+    return letterArray
+   }
     return (
         <>
-        <h2>Translate</h2>
+            <h3>Translate to ASL (American Sign Language)</h3>
             <form onSubmit={handleSubmit(handleonSubmit)}>
-                <input type="text" placeholder='Enter text to translate...' {...register("text",textConfig)} />
-                <button id="submit-btn" type="submit" disabled={loading}>Submit</button>
-                { errorMessage }
-                {loading && <p>Logging in...</p>}
-                {apiError && <p>{apiError}</p>}
+            <input type="text" placeholder="Hello, world!" {...register("translationText", translationConfig)} onChange={handleChange}/>
+            <button id="submit-btn" type="submit" disabled={loading}>Save to profile</button>
+            { loading && <p>Saving...</p>}
             </form>
+            <Signs translation={splitLetter()} key="translation"/>
+            {/* {<p> {translation}</p>} */}
         </>
     )
 }

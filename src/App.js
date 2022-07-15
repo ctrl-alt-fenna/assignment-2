@@ -16,7 +16,7 @@ function App() {
       <div className="App">
         <Navbar/>
         <h1 id="title">Lost in Translation</h1>
-        <img src={Logo} width="10%"/>
+        <img src={Logo} width="10%" alt="Logo for Lost in Translation"/>
         <Routes>
           <Route path="/" element={< Login/>} />
           <Route path="/translate" element={< Translate />} />

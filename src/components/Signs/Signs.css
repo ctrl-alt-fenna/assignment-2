@@ -1,0 +1,8 @@
+img#letter {
+    max-width: 36px;
+    height: auto;
+}
+span#non-letter {
+    font-weight: bold;
+    font-size: 150%;
+}
