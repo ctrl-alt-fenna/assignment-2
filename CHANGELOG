@@ -14,3 +14,11 @@
 * User can enter username and login
 * User can create new user if username doesn't exist
 * User gets redirected to profile page when succesfully logged in
+# Version 1.3
+* Nav bar added
+* Nav bar linked to correct pages
+* Nav bar styled
+* Translate images added
+* Translate styling created
+* Translate basic hooks created
+* Translating now works

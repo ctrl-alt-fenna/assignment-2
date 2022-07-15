@@ -16,19 +16,15 @@ const Navbar = () => {
   }
 
 
-
   return (
     <nav>
-
-
-
       { user !== null &&
         <ul>
           <li>
-            <NavLink to="/Translate">Translate</NavLink>
+            <NavLink to="/translate">Translate</NavLink>
           </li>
           <li>
-            <NavLink to="/Profile">Profile</NavLink>
+            <NavLink to="/profile">Profile</NavLink>
           </li>
           <li>
             <NavLink to="/"><button onClick={handleLogoutClick}>Logout</button></NavLink>
