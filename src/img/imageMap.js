@@ -1,55 +1,60 @@
-import a from "../img/a.png"
-import b from "../img/b.png"
-import c from "../img/c.png"
-import d from "../img/d.png"
-import e from "../img/e.png"
-import f from "../img/f.png"
-import g from "../img/g.png"
-import h from "../img/h.png"
-import i from "../img/i.png"
-import j from "../img/j.png"
-import k from "../img/k.png"
-import l from "../img/l.png"
-import m from "../img/m.png"
-import n from "../img/n.png"
-import o from "../img/o.png"
-import p from "../img/p.png"
-import q from "../img/q.png"
-import r from "../img/r.png"
-import s from "../img/s.png"
-import t from "../img/t.png"
-import u from "../img/u.png"
-import v from "../img/v.png"
-import w from "../img/w.png"
-import x from "../img/x.png"
-import y from "../img/y.png"
-import z from "../img/z.png"
+import hand_a from "../img/a.png"
+import hand_b from "../img/b.png"
+import hand_c from "../img/c.png"
+import hand_d from "../img/d.png"
+import hand_e from "../img/e.png"
+import hand_f from "../img/f.png"
+import hand_g from "../img/g.png"
+import hand_h from "../img/h.png"
+import hand_i from "../img/i.png"
+import hand_j from "../img/j.png"
+import hand_k from "../img/k.png"
+import hand_l from "../img/l.png"
+import hand_m from "../img/m.png"
+import hand_n from "../img/n.png"
+import hand_o from "../img/o.png"
+import hand_p from "../img/p.png"
+import hand_q from "../img/q.png"
+import hand_r from "../img/r.png"
+import hand_s from "../img/s.png"
+import hand_t from "../img/t.png"
+import hand_u from "../img/u.png"
+import hand_v from "../img/v.png"
+import hand_w from "../img/w.png"
+import hand_x from "../img/x.png"
+import hand_y from "../img/y.png"
+import hand_z from "../img/z.png"
 export const handSigns = {
-    hand_a: a,
-    hand_b: b,
-    hand_c: c,
-    hand_d: d,
-    hand_e: e,
-    hand_f: f,
-    hand_g: g,
-    hand_h: h,
-    hand_i: i,
-    hand_j: j,
-    hand_k: k,
-    hand_l: l,
-    hand_m: m,
-    hand_n: n,
-    hand_o: o,
-    hand_p: p,
-    hand_q: q,
-    hand_r: r,
-    hand_s: s,
-    hand_t: t,
-    hand_u: u,
-    hand_v: v,
-    hand_w: w,
-    hand_x: x,
-    hand_y: y,
-    hand_z: z,
+     a: hand_a,
+     b: hand_b,
+     c: hand_c,
+     d: hand_d,
+     e: hand_e,
+     f: hand_f,
+     g: hand_g,
+     h: hand_h,
+     i: hand_i,
+     j: hand_j,
+     k: hand_k,
+     l: hand_l,
+     m: hand_m,
+     n: hand_n,
+     o: hand_o,
+     p: hand_p,
+     q: hand_q,
+     r: hand_r,
+     s: hand_s,
+     t: hand_t,
+     u: hand_u,
+     v: hand_v,
+     w: hand_w,
+     x: hand_x,
+     y: hand_y,
+     z: hand_z,
+}
+export const getImagePath = (letter) =>
+{
+    console.log(letter)
+    return handSigns[letter]
 }
 export default handSigns

@@ -14,6 +14,7 @@ const translationConfig = {
 const {hand_a, hand_b, hand_c, hand_d, hand_e, hand_f, hand_g, hand_h, hand_i, hand_j, hand_k, hand_l, hand_m,hand_n, hand_o, hand_p, hand_q, hand_r, hand_s, hand_t, hand_u, hand_v, hand_w, hand_x ,hand_y ,hand_z} = handSigns
 function TranslationForm()
 {
+    let letterArray =['h']
     const { register, handleSubmit, formState: { errors }} = useForm()
     const [translation , setTranslation] = useState('')
     // Make it possible to display loading/error states
@@ -29,7 +30,12 @@ function TranslationForm()
         OUTPUT: Sends data to API to retreive login info
     */
    const handleChange = (event) => {
+    letterArray = splitLetter()
     setTranslation(event.target.value)
+   }
+   const splitLetter = () => {
+    letterArray = translation.split("")
+    return letterArray
    }
     return (
         <>
@@ -39,8 +45,9 @@ function TranslationForm()
             <button id="submit-btn" type="submit" disabled={loading}>Translate</button>
             { loading && <p>Translating...</p>}
             { apiError && <p>{apiError}</p>}
-            {<span> { translation } </span>}
             </form>
+            <Signs translation={splitLetter()}/>
+            {/* {<p> {translation}</p>} */}
         </>
     )
 }
