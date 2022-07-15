@@ -1,22 +1,25 @@
-import { createHeaders } from "."
+import {createHeaders } from "."
 const apiURL = process.env.REACT_APP_API_URL
 
-export const sendTranslation = async (translationText) =>{
- try {
-    const response = await fetch(apiURL, {
-        method: 'POST',
+export const updateTranslations = async (user, translation) =>
+{
+  try {
+    const response = await fetch(`${apiURL}/${user.id}`, {
+        method: 'PATCH',
         headers: createHeaders(),
         body: JSON.stringify({
-            translations: translationText
+            translations: [...user.translations, translation]
         })
     })
-    if (!response.ok)
-        throw new Error("Could not submit translation text " + translationText)
-    const data = await response.json()
-    return [null, data]
- }
- catch (error)
- {
-    return [error.message, null]
- }
+    if (!response.ok) throw new Error('Could not update translations')
+    const result = await response.json()
+    return [ null, result]
+  }
+  catch (error)
+  {
+    return [ error.message, null ]
+  }
+}
+export const orderClearHistory = (userID) => {
+
 }
