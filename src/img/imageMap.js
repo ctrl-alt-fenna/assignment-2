@@ -54,7 +54,6 @@ export const handSigns = {
 }
 export const getImagePath = (letter) =>
 {
-    console.log(letter)
     return handSigns[letter]
 }
 export default handSigns

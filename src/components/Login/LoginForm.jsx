@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import { storageRead, storageSave } from '../../utils/storage'
+import { storageSave } from '../../utils/storage'
 
 import { STORAGE_KEY_USER } from '../../const/storageKeys'
 import { loginUser } from '../../api/user'

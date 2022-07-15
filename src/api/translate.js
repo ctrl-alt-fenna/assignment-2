@@ -1,7 +1,7 @@
 import { createHeaders } from "."
 const apiURL = process.env.REACT_APP_API_URL
 
-export const translationText = async (translationText) =>{
+export const sendTranslation = async (translationText) =>{
  try {
     const response = await fetch(apiURL, {
         method: 'POST',
