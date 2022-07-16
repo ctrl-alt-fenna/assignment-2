@@ -11,9 +11,9 @@ const Profile = () => {
 
   return (
     <>
-      <ProfileHeader username={user.username}/>
+      <ProfileHeader username={user.username} />
       <ProfileAction />
-      <ProfileTranslateHistory translations ={user.translations}/>
+      <ProfileTranslateHistory translations={user.translations} />
     </>
   )
 }

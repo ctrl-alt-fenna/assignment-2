@@ -6,15 +6,15 @@ const apiURL = process.env.REACT_APP_API_URL
     OUTPUT: The userdata, or an error of user does not exist in database
 */
 export const checkForUser = async (username) => {
-    try{
+    try {
         const response = await fetch(`${apiURL}?username=${username}`)
         if (!response.ok)
             throw new Error('Could not complete request')
         const data = await response.json()
         return [null, data]
     }
-    catch (error){
-        return[ error.message, null]
+    catch (error) {
+        return [error.message, null]
     }
 }
 /*  Function to create user in API database
@@ -22,7 +22,7 @@ export const checkForUser = async (username) => {
     OUTPUT: A new user in database
 */
 const createUser = async (username) => {
-    try{
+    try {
         const response = await fetch(apiURL,
             {
                 method: 'POST',
@@ -37,8 +37,8 @@ const createUser = async (username) => {
         const data = await response.json()
         return [null, data]
     }
-    catch (error){
-        return[ error.message, null]
+    catch (error) {
+        return [error.message, null]
     }
 }
 /*  Function to login user or create new user if username doesn't exist
@@ -49,7 +49,7 @@ const createUser = async (username) => {
 export const loginUser = async (username) => {
     const [checkError, user] = await checkForUser(username)
     // Check if errors occur
-    if (checkError !== null) return[checkError, null]
+    if (checkError !== null) return [checkError, null]
     // Check if user exists
     if (user.length > 0) return [null, user.pop()]
     // Creates new user because username doesnt exist
