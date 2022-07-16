@@ -1,26 +1,24 @@
 import React, {useState} from 'react'
-import { useUser } from '../../context/UserContext'
-import { storageRead, storageSave } from '../../utils/storage'
+import { storageRead } from '../../utils/storage'
 import { STORAGE_KEY_USER } from '../../const/storageKeys'
 import { updateTranslations } from '../../api/translate'
 import {checkForUser } from "../../api/user"
-import withAuth from '../../hoc/withAuth'
 import {useForm} from 'react-hook-form'
 import Signs from '../Signs/Signs'
 const translationConfig = {
     minLength: 1
 }
-const TranslationForm = ( { onOrder}) => {
+const TranslationForm = () => {
 
     {
         let letterArray =['']
         let lowerCaseTranslation = ''
         const { register, handleSubmit} = useForm()
         const [translation , setTranslation] = useState('')
-        const { user } = useUser()
-        
+
         // Make it possible to display loading/error states
         const [loading, setLoading] = useState(false)
+        // eslint-disable-next-line
         const [apiError, setApiError] = useState(null)
         
         const handleonSubmit = async () => {
@@ -29,6 +27,7 @@ const TranslationForm = ( { onOrder}) => {
             if (userData === null) return
             const [userError, user ] = await checkForUser(userData.username)
             if (userError) throw new Error("Cannot retrieve userdata")
+            //eslint-disable-next-line
             const [error, response] = await updateTranslations(user[0], translation)
             if (error !== null) setApiError(error)
             setLoading(false)
@@ -65,4 +64,4 @@ const TranslationForm = ( { onOrder}) => {
     )
 }
 }
-export default withAuth(TranslationForm)
+export default TranslationForm

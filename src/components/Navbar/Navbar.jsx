@@ -19,17 +19,11 @@ const Navbar = () => {
   return (
     <nav>
       { user !== null &&
-        <ul>
-          <li>
+      <>
             <NavLink to="/translate">Translate</NavLink>
-          </li>
-          <li>
             <NavLink to="/profile">Profile</NavLink>
-          </li>
-          <li>
-            <NavLink to="/"><a onClick={handleLogoutClick}>Logout</a></NavLink>
-          </li>
-        </ul>
+            <NavLink to="/" onClick={handleLogoutClick}>Logout</NavLink>
+      </>
       }
     </nav>
   )

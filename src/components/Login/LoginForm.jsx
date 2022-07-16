@@ -59,7 +59,7 @@ function LoginForm() {
     })()
     return (
         <>
-        <h2>Login</h2>
+        <h2 id="sub-title">Login</h2>
             <form onSubmit={handleSubmit(handleonSubmit)}>
                 <input type="text" placeholder='Enter your username...' {...register("username",usernameConfig)} />
                 <button id="submit-btn" type="submit" disabled={loading}>Submit</button>

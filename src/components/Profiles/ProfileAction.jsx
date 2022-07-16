@@ -31,10 +31,10 @@ const ProfileAction = () => {
     setLoading(false)
   }
   return (
-    <ul>
-      <li><button onClick={handleClearClick}>Clear history</button></li>
-      <li><button onClick={handleLogoutClick}>Logout</button></li>
-    </ul>
+    <>
+      <button id="profile-btn" onClick={handleClearClick}>Clear history</button>
+      <button id="profile-btn" onClick={handleLogoutClick}>Logout</button>
+    </>
   )
 }
 export default ProfileAction
