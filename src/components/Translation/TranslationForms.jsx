@@ -15,7 +15,7 @@ const TranslationForm = () => {
     const [translation, setTranslation] = useState('')
     // Make it possible to display loading/error states
     const [loading, setLoading] = useState(false)
-    const { setApiError } = useState(null)
+    const setApiError = useState(null)[1]
 
     /*  Function to send usertranslations to profile if they wish to save them
         INPUT: Retrieves userdata from local storage
