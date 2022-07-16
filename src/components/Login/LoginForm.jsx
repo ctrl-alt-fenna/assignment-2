@@ -26,8 +26,6 @@ function LoginForm() {
         }
     }, [user, navigate])
 
-    // Event handlers
-
     /*  Function that sends data
         INPUT: Data object
         OUTPUT: Sends data to API to retreive login info

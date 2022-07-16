@@ -9,41 +9,40 @@ const translationConfig = {
     minLength: 1
 }
 const TranslationForm = () => {
-
-    {
         let letterArray =['']
         let lowerCaseTranslation = ''
         const { register, handleSubmit} = useForm()
         const [translation , setTranslation] = useState('')
-
         // Make it possible to display loading/error states
         const [loading, setLoading] = useState(false)
-        // eslint-disable-next-line
-        const [apiError, setApiError] = useState(null)
-        
+        const {setApiError} = useState(null)
+
+    /*  Function to send usertranslations to profile if they wish to save them
+        INPUT: Retrieves userdata from local storage
+        OUTPUT: Userdata is used to update translations if possible
+    */
         const handleonSubmit = async () => {
             setLoading(true)
             let userData = storageRead(STORAGE_KEY_USER)
             if (userData === null) return
             const [userError, user ] = await checkForUser(userData.username)
             if (userError) throw new Error("Cannot retrieve userdata")
-            //eslint-disable-next-line
-            const [error, response] = await updateTranslations(user[0], translation)
+            const { error } = await updateTranslations(user[0], translation)
             if (error !== null) setApiError(error)
             setLoading(false)
     }
     
     /*  Function that sends data to retrieve images
-    INPUT: Event (Text input) change
-    OUTPUT: Printed images of given letters
+        INPUT: Event (Text input) change
+        OUTPUT: Printed images of given letters
     */
    const handleChange = (event) => {
        letterArray = splitLetter()
        setTranslation(event.target.value)
     }
-    /*   Helper-function to split sentence into letters
-    INPUT: Only uses translation
-    OUTPUT: Returns letterArray, an array of letters split from translation (user input)
+    /*  Helper-function to split sentence into letters
+        INPUT: Only uses translation that is set every time user types in inputbox
+        OUTPUT: Returns letterArray, an array of letters split from translation (user input)
     */
    const splitLetter = () => {
        lowerCaseTranslation = translation.toLowerCase()
@@ -59,9 +58,8 @@ const TranslationForm = () => {
             { loading && <p>Saving...</p>}
             </form>
             <Signs translation={splitLetter()} key="translation"/>
-            {/* {<p> {translation}</p>} */}
         </>
     )
 }
-}
+
 export default TranslationForm

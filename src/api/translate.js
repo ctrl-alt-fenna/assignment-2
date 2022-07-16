@@ -18,11 +18,12 @@ export const updateTranslations = async (user, translation) =>
     const result = await response.json()
     return [ null, result]
   }
-  catch (error)
-  {
-    return [ error.message, null ]
-  }
+  catch (error){return [ error.message, null ]}
 }
+/*  Function to clear userhistory
+    INPUT: A user object
+    OUTPUT: A cleared translationhistory for given user
+*/
 export const clearUserHistory = async ( user ) => {
   let username = user.username
   try {
@@ -38,8 +39,5 @@ export const clearUserHistory = async ( user ) => {
       const result = await response.json()
       return [ null, result]
   }
-  catch (error)
-  {
-      return [error.message, null]
-  }
+  catch (error) {return [error.message, null]}
 }
