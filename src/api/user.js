@@ -17,7 +17,6 @@ export const checkForUser = async (username) => {
         return[ error.message, null]
     }
 }
-
 /*  Function to create user in API database
     INPUT: A username to create
     OUTPUT: A new user in database
