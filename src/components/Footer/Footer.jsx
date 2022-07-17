@@ -1,5 +1,3 @@
-import { NavLink, Navigate } from "react-router-dom"
-
 // import some logo for footer
 import Email from "../../../src/img/Email.png"
 import Gitlab from "../../../src/img/Gitlab.png"
@@ -19,13 +17,7 @@ const Footer = () => {
           <div className="about-us">
             <h3>About us</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores possimus magnam cumque molestiae, vero incidunt unde ab corporis. A quam, mollitia blanditiis maxime in alias laudantium omnis fugiat quae consequatur.</p>
-
-            <div className="social-icons">
-              <a href="#"><img src={Linkedin} alt="Linkedin" title="Linkedin"class="icons"></img></a>
-              <a href="#"><img src={Heroku} alt="Heroku" title="Heroku" class="icons"></img></a>
-              <a href="#"><img src={Gitlab} alt="Gitlab" title="Gitlab" class="icons"></img></a>
-				    </div>
-
+            <em>Ⓒ copy right 2022</em>
           </div>
 
           <div className="contact">
@@ -43,6 +35,12 @@ const Footer = () => {
                 <p>Accelebrate@candidate.noroff.com</p>
               </div>
           </div>
+
+          <div className="social-icons">
+              <a href="https://www.linkedin.com/company/experis/jobs?trk=nav_type_jobs"><img src={Linkedin} alt="Linkedin" title="Linkedin"class="icons"></img></a>
+              <a href="https://dashboard.heroku.com/apps/assignment2-react-linh"><img src={Heroku} alt="Heroku" title="Heroku" class="icons"></img></a>
+              <a href="https://gitlab.com/linhmillion/assignment2-react"><img src={Gitlab} alt="Gitlab" title="Gitlab" class="icons"></img></a>
+				    </div>
 
 
         </>
