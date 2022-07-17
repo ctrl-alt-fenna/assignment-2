@@ -1,6 +1,6 @@
 # Assignment 2 - Translation Website
 Translation web application using React.
-API hosted on https://dashboard.heroku.com/apps/data-assignment2
+API hosted on https://data-assignment2.herokuapp.com/ 
 # Install
 ```
 git clone https://gitlab.com/linhmillion/assignment2-react.git
