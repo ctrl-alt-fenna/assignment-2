@@ -8,30 +8,13 @@ import Linkedin from "../../../src/img/Linkedin.png"
 import Location from "../../../src/img/Location.png"
 import Phone from "../../../src/img/Phone.png"
 import React from "react"
-import { STORAGE_KEY_USER } from '../../const/storageKeys';
-import { storageDelete } from '../../utils/storage';
-import { useUser } from "../../context/UserContext"
 
 // src/img/Location.pngimport Location from "../../../src/img/Location.png"
 
 
 const Footer = () => {
-	const { user, setUser } = useUser()
-	/*	Function to logout user from navbar click
-		INPUT: None
-		OUTPUT: Clears localstorage from any userdata and redirects to login page
-	*/
-	const handleLogoutClick = () => {
-		if (window.confirm('Are you sure you want to log out?')) {
-			storageDelete(STORAGE_KEY_USER)
-			setUser(null)
-			return <Navigate to='/' />
-		}
-	}
-
 	return (
 		<footer>
-			{user !== null &&
 				<>
           <div className="about-us">
             <h3>About us</h3>
@@ -42,7 +25,6 @@ const Footer = () => {
               <a href="#"><img src={Heroku} alt="Heroku" title="Heroku" class="icons"></img></a>
               <a href="#"><img src={Gitlab} alt="Gitlab" title="Gitlab" class="icons"></img></a>
 				    </div>
-
 
           </div>
 
@@ -64,7 +46,6 @@ const Footer = () => {
 
 
         </>
-			}
 		</footer>
 	)
 }
