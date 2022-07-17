@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit&family=Love+Ya+Like+A+Sister&display=swap');
-
+/* import font for history list */
+@import url('https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova&display=swap');
 :root {
     --button-background: #d62828;
     --title-color: #003049;
@@ -128,4 +129,19 @@ nav a:hover,
 
 .profile-btn:hover {
     border: 2px solid darkred;
+}
+
+
+/* styling for translated history list */
+
+#title-translate-history{
+  font-size: 2em;
+  color: #003049;
+}
+#history-list{
+  line-height: 3em;
+}
+
+#profile-history {
+  font-size: 1.5em;
 }
