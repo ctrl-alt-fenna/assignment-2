@@ -1,5 +1,5 @@
 import React from 'react'
-const ProfileHeader = ( {username} ) => {
+const ProfileHeader = ({ username }) => {
   return (
     <>
     <h1 id="sub-title">Hello, { username } !</h1>

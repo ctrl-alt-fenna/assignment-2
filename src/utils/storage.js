@@ -17,5 +17,5 @@ export const storageRead = (key) => {
 }
 
 export const storageDelete = key => {
-  localStorage.removeItem(key)
+    localStorage.removeItem(key)
 }

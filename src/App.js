@@ -1,5 +1,3 @@
-import './App.css';
-
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import Login from './views/Login';
@@ -11,6 +9,10 @@ import React from 'react';
 import Translate from './views/Translate';
 
 function App() {
+/*	Functions to change image on hover (very necessary component)
+	INPUT: An img element
+	OUTPUT: A cute image
+*/
   const changeHello = (element) => {
     element.target.src = LogoHello
     element.target.id = "img-logoHello"
