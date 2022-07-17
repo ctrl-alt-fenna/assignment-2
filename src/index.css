@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit&family=Love+Ya+Like+A+Sister&display=swap');
 /* import font for history list */
 @import url('https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova&display=swap');
+
+
+@import url('https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js');
 :root {
     --button-background: #d62828;
     --title-color: #003049;
@@ -144,4 +147,37 @@ nav a:hover,
 
 #profile-history {
   font-size: 1.5em;
+}
+
+
+/* styling for footer */
+footer {
+  background-color: orange;
+  display: flex;
+  padding: 2em;
+}
+footer h3 {
+  font-size: 1.5em;
+  margin-bottom: 1em;
+}
+.contact img {
+  width: 1.5em;
+  margin-top:0.5em;
+
+}
+.social-icons img {
+  width:2.5em;
+}
+.contact {
+  line-height: 2em;
+  width:50%;
+}
+.about-us{
+  width: 50%;
+}
+.social-icons {
+  margin-top: 2em;
+}
+.icons {
+  margin: 1em 2em;
 }

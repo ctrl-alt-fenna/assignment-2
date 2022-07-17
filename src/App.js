@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
+import Footer from './components/Footer/Footer'
 import Login from './views/Login';
 import Logo from "../src/img/Logo.png"
 import LogoHello from "../src/img/Logo-Hello.png"
@@ -32,6 +33,7 @@ function App() {
           <Route path="/translate" element={< Translate />} />
           <Route path="/profile" element={< Profile />} />
         </Routes>
+        <Footer />
       </div>
     </BrowserRouter>
   );
