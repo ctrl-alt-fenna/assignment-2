@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { STORAGE_KEY_USER } from '../../const/storageKeys';
-import { storageDelete, storageRead } from '../../utils/storage';
+import { storageDelete, storageRead, storageSave } from '../../utils/storage';
 import { useUser } from '../../context/UserContext';
 import { clearUserHistory } from '../../api/translate';
 import { checkForUser } from '../../api/user';
@@ -30,15 +30,20 @@ const ProfileAction = () => {
 		if (userError) throw new Error("Cannot retrieve userdata")
 		const response = await clearUserHistory(user[0])
 		if (response.error !== null) setApiError(response.error)
+        const updated = await checkForUser(userData.username)
+        storageDelete(STORAGE_KEY_USER)
+        storageSave(STORAGE_KEY_USER, updated[1][0])
+        setUser(updated[1][0])
 		setLoading(false)
+
 	}
 	return (
-		<>
-			<button id="profile-btn" onClick={handleClearClick}>Clear history</button>
-			<button id="profile-btn" onClick={handleLogoutClick}>Logout</button>
+		<div className="profile-btns">
+			<button className="profile-btn" onClick={handleClearClick}>Clear history</button>
+			<button className="profile-btn" onClick={handleLogoutClick}>Logout</button>
 			{loading && <p>Loading...</p>}
 			{apiError && <p>{apiError}</p>}
-		</>
+		</div>
 	)
 }
 export default ProfileAction
