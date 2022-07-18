@@ -189,7 +189,7 @@ footer h3 {
   width: auto;
   max-height: 12em;
   line-height: 2.4em;
-  max-width: 40%;
+  max-width: auto;
 }
 .social-icons {
   translate:(0, -50%);
@@ -227,4 +227,14 @@ footer h3 {
   -webkit-box-orient: vertical;
   overflow: hidden;
   line-height: 2em;
+}
+
+
+@media only screen and (max-width: 480px) {
+  footer {
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    height:auto;
+  }
 }
