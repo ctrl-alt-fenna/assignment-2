@@ -165,7 +165,6 @@ footer {
   width:100%;
   box-sizing: border-box;
   justify-content:space-around;
-  max-height: 22em;
   height:100%;
   padding-left:1.6em;
 }
@@ -191,12 +190,12 @@ footer h3 {
 .about-us{
   width: auto;
   max-height: 12em;
-  /* object-fit:scale-down; */
   line-height: 2.4em;
-  max-width: 40%;
+  max-width: auto;
 }
 .social-icons {
-  align-items:center;
+  display:flex;
+  flex-wrap:wrap;
 }
 .icons {
   margin: 1em 1em;
@@ -226,4 +225,14 @@ footer h3 {
   -webkit-box-orient: vertical;
   overflow: hidden;
   line-height: 2em;
+}
+
+
+@media only screen and (max-width: 480px) {
+  footer {
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    height:auto;
+  }
 }
