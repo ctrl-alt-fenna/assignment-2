@@ -12,6 +12,14 @@ This command runs a server on localhost:3000 (by default, though the port can be
 ```
 npm start port=PORTNUMBER
 ```
+To create the .env file needed for using the API:
+```
+REACT_APP_API_URL = <your API url here>
+REACT_APP_API_KEY = <your API key here>
+```
+and place this .env file in the ROOT-folder (not src or public!)
+This should allow for all the functionality to work! 
+
 # About This Project
 * The user can login with a valid username
 * If the username is not found, create new user
@@ -23,9 +31,12 @@ npm start port=PORTNUMBER
 * The user can view their translate history on their profile
 * The user can clear their translation history on their profile
 * The user can logout
+* The user gets redirected to /login screen once logged out
 # Screenshots?
 
 # Authors and Acknowledgements
 This project was created by [Linh Trieu(@linhmillion)](@linhmillion) and [Fenna Ransijn(@fransijn)](@fransijn). 
 
 # Project Status
+* All features completed
+* Design still in progress
