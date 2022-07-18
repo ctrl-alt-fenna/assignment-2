@@ -20,7 +20,7 @@ const Profile = () => {
     },[])
 	return (
     <div id="profile">
-			<h2>Profile</h2>
+			{/* <h2>Profile</h2> */}
 			<ProfileHeader username={user.username} />
 			<ProfileTranslateHistory translations={user.translations} />
       <ProfileAction />

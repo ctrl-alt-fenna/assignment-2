@@ -17,10 +17,7 @@
     font-family: 'Kanit', sans-serif;
 }
 
-html,
-body,
-header,
-footer {
+body {
     background-color: #eae2b7;
     text-align: center;
     padding: 0;
@@ -38,12 +35,14 @@ nav {
 nav * {
     background-color: orange;
     color: var(--text-bright);
-    padding: 1em;
-    margin: 0.5em;
-    width: 10%;
+    padding: 0.6em 1.2em;
+    margin: 0.6em 1em;
+    width: auto;
     text-decoration: none;
     font-weight: bold;
     border: none;
+    font-size: 2em;
+    align-content:center;
 }
 
 input {
@@ -155,30 +154,47 @@ footer {
   background-color: orange;
   display: flex;
   padding: 2em;
-  margin-top:2em;
+  /* margin-top:2em; */
+  text-align: left;
 }
 footer h3 {
   font-size: 1.5em;
   margin-bottom: 1em;
+  align-items: left;
 }
 .contact img {
-  width: 1.5em;
-  margin-top:0.5em;
+  width: 2.5em;
+  object-fit:cover;
+  margin-right:1.5em;
 
 }
 .social-icons img {
-  width:2.5em;
+  width:2.6em;
+  margin: 1em;
 }
 .contact {
   line-height: 2em;
-  width:50%;
+  width:auto;
 }
 .about-us{
-  width: 50%;
+  width: auto;
+  line-height: 2.4em;
+  max-width: 40%;
 }
 .social-icons {
-  margin-top: 2em;
+
+  justify-content:flex-end;
+  padding-left:1.6em;
 }
 .icons {
   margin: 1em 2em;
+  align-items:right;
+}
+.email , .phone , .location {
+  display:flex;
+  align-items: center;
+  line-height: 3.8em;
+}
+.contact, .about-us , .social-icons {
+  margin:2em;
 }
