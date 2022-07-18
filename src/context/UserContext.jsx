@@ -1,7 +1,7 @@
-import { createContext, useContext, useEffect, useState } from "react";
-import { storageRead } from "../utils/storage";
+import { createContext, useContext, useEffect, useState } from 'react';
+import { storageRead } from '../utils/storage';
 import { STORAGE_KEY_USER } from '../const/storageKeys'
-import React from "react";
+import React from 'react';
 
 const UserContext = createContext()
 export const useUser = () => {

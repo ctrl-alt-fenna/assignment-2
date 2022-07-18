@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { updateTranslations } from '../../api/translate'
-import { checkForUser } from "../../api/user"
+import { checkForUser } from '../../api/user'
 import { storageSave } from '../../utils/storage'
 import { useUser } from '../../context/UserContext'
 import { useForm } from 'react-hook-form'
@@ -26,7 +26,7 @@ const TranslationForm = () => {
     const handleonSubmit = async () => {
         setLoading(true)
         const [userError, data] = await checkForUser(user.username)
-        if (userError) throw new Error("Cannot retrieve userdata")
+        if (userError) throw new Error('Cannot retrieve userdata')
         const [error, updatedUser] = await updateTranslations(data[0], translation)
         if (error !== null) setApiError(error)
         else {
@@ -52,18 +52,18 @@ const TranslationForm = () => {
     */
     const splitLetter = () => {
         lowerCaseTranslation = translation.toLowerCase()
-        letterArray = lowerCaseTranslation.split("")
+        letterArray = lowerCaseTranslation.split('')
         return letterArray
     }
     return (
         <>
             <h3>Translate to ASL (American Sign Language)</h3>
-            <form onSubmit={handleSubmit(handleonSubmit)}>
-                <input type="text" placeholder="Hello, world!" {...register("translationText", translationConfig)} onChange={handleChange} />
-                <button id="submit-btn" type="submit" disabled={loading}>Save to profile</button>
+            <form class='translate' onSubmit={handleSubmit(handleonSubmit)}>
+                <input type='text' placeholder='Hello, world!' {...register('translationText', translationConfig)} onChange={handleChange} />
+                <button id='submit-btn' type='submit' disabled={loading}>Save to profile</button>
                 {loading && <p>Saving...</p>}
             </form>
-            <Signs translation={splitLetter()} key="translation" />
+            <Signs translation={splitLetter()} key='translation' />
         </>
     )
 }

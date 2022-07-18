@@ -1,5 +1,5 @@
-import { createHeaders } from "."
-import { storageDelete, storageSave } from "../utils/storage"
+import { createHeaders } from '.'
+import { storageDelete, storageSave } from '../utils/storage'
 import { STORAGE_KEY_USER } from '../const/storageKeys';
 const apiURL = process.env.REACT_APP_API_URL
 /*  Function to update user-translation history

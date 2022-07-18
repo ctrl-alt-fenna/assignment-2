@@ -34,9 +34,9 @@ const ProfileAction = () => {
         setLoading(false)
 	}
 	return (
-		<div className="profile-btns">
-			<button className="profile-btn" onClick={handleClearClick}>Clear history</button>
-			<button className="profile-btn" onClick={handleLogoutClick}>Logout</button>
+		<div className='profile-btns'>
+			<button className='profile-btn' onClick={handleClearClick}>Clear History</button>
+			<button className='profile-btn' onClick={handleLogoutClick}>Logout</button>
 			{loading && <p>Loading...</p>}
 			{apiError && <p>{apiError}</p>}
 		</div>
