@@ -11,7 +11,7 @@ import Twitter from "../../../src/img/Twitter.png"
 
 const Footer = () => {
 	return (
-		<footer>
+		<footer className="footer">
 				<>
           <div className="about-us">
             <h3>About us</h3>
