@@ -22,3 +22,9 @@
 * Translate styling created
 * Translate basic hooks created
 * Translating now works
+# Version 1.4
+* Translation can be sent to translation.json on Heroku
+* User can login and view their translation history
+* User can clear their translation history
+* Translations are updated locally and serverside for faster retrieval
+* Small styling updates
