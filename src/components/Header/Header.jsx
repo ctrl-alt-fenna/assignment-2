@@ -15,10 +15,10 @@ const changeHello = (element) => {
   }
 const Header = () => {
     return (
-        <>
+        <div className='header'>
             <h1 id='title'>Lost in Translation</h1>
             <img src={Logo} alt='Logo for Lost in Translation' id='img-logoNorm' onMouseEnter={changeHello} onMouseLeave={changeNormal} />
-        </>
+        </div>
     )
 }
 export default Header
