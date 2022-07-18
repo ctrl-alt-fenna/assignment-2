@@ -1,8 +1,8 @@
-import { NavLink, Navigate } from "react-router-dom"
-import React from "react"
+import { NavLink, Navigate } from 'react-router-dom'
+import React from 'react'
 import { STORAGE_KEY_USER } from '../../const/storageKeys';
 import { storageDelete } from '../../utils/storage';
-import { useUser } from "../../context/UserContext"
+import { useUser } from '../../context/UserContext'
 const Navbar = () => {
 	const { user, setUser } = useUser()
 	/*	Function to logout user from navbar click
@@ -21,9 +21,9 @@ const Navbar = () => {
 		<nav>
 			{user !== null &&
 				<>
-					<NavLink to="/translate">Translate</NavLink>
-					<NavLink to="/profile">Profile</NavLink>
-					<NavLink to="/" onClick={handleLogoutClick}>Logout</NavLink>
+					<NavLink to='/translate'>Translate</NavLink>
+					<NavLink to='/profile'>Profile</NavLink>
+					<NavLink to='/' onClick={handleLogoutClick}>Logout</NavLink>
 				</>
 			}
 		</nav>

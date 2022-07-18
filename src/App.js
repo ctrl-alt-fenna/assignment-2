@@ -17,8 +17,8 @@ function App() {
           <Route path="/translate" element={< Translate />} />
           <Route path="/profile" element={< Profile />} />
         </Routes>
-        <Footer />
       </div>
+        <Footer />
     </BrowserRouter>
   );
 }
