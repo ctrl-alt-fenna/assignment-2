@@ -5,6 +5,9 @@ Translation web application using React.
 git clone https://gitlab.com/linhmillion/assignment2-react.git
 ```
 # Usage
+On web:
+https://assignment2-react-linh.herokuapp.com/ 
+On localhost:
 ```
 npm start
 ```
