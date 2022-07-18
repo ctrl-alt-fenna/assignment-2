@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit&family=Love+Ya+Like+A+Sister&display=swap');
 /* import font for history list */
 @import url('https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova&display=swap');
-
-
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 @import url('https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js');
 :root {
     --button-background: #FE8761;
@@ -153,15 +152,18 @@ nav a:hover,
 }
 
 #profile-history {
+  font-family: 'Lato', sans-serif;
+  font-weight: normal;
   font-size: 1.5em;
 }
 
 
 /* styling for footer */
 footer {
-  background-color: var(--footer-background);
   display: flex;
+  background-color: var(--footer-background);
   text-align: left;
+  justify-content: space-around;
   width:100%;
   box-sizing: border-box;
   justify-content:space-around;
@@ -172,13 +174,9 @@ footer {
 footer h3 {
   font-size: 1.5em;
   margin-bottom: 0.4em;
-  align-items: left;
 }
 .contact img {
-  width: 2.5em;
-  object-fit:cover;
-  margin-right:1.5em;
-
+  width: 1.5em;
 }
 .social-icons img {
   width:2em;
@@ -196,7 +194,12 @@ footer h3 {
   max-width: 40%;
 }
 .social-icons {
-  align-items:center;
+  translate:(0, -50%);
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
 }
 .icons {
   margin: 1em 1em;
@@ -215,7 +218,7 @@ footer h3 {
   align-items: center;
   line-height: 3.2em;
 }
-.contact, .about-us , .social-icons {
+.contact, .about-us, .social-icons {
   margin:1em 1em;
 }
 
