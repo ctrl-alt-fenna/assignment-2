@@ -1,3 +1,4 @@
+// import some logo for footer
 import Email from "../../../src/img/Email.png"
 import Facebook from "../../../src/img/Facebook.png"
 import Gitlab from "../../../src/img/Gitlab.png"
@@ -6,11 +7,7 @@ import Linkedin from "../../../src/img/Linkedin.png"
 import Location from "../../../src/img/Location.png"
 import Phone from "../../../src/img/Phone.png"
 import React from "react"
-// import some logo for footer
 import Twitter from "../../../src/img/Twitter.png"
-
-// src/img/Location.pngimport Location from "../../../src/img/Location.png"
-
 
 const Footer = () => {
 	return (

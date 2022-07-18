@@ -1,5 +1,6 @@
 import Logo from "../../img/Logo.png"
 import LogoHello from "../../img/Logo-Hello.png"
+import React from 'react'
 /*	Functions to change image on hover (very necessary component)
 	INPUT: An img element
 	OUTPUT: A cute image
