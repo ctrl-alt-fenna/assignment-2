@@ -12,6 +12,7 @@
 }
 html {
   height: 100%;
+  font-size: 16px;
 }
 
 h1, h2 {
@@ -23,6 +24,7 @@ h1, h2 {
 }
 
 body {
+  font-size: 100%;
   background-color: #F6EEC9;
   text-align: center;
   padding: 0;
@@ -44,27 +46,7 @@ nav {
 
 nav a {
   flex-shrink: 1;
-  color: var(--text-bright);
   background-color: var(--nav-bar-color);
-  padding: 0.4em 0.8em;
-  width: 25%;
-  text-decoration: none;
-  font-weight: bold;
-  border: none;
-}
-
-nav {
-    margin: 1em auto;
-    width: 35%;
-    justify-content: space-between;
-    display: flex;
-    align-content: center;
-    font-size: 125%;
-    min-width:fit-content;
-  }
-
-  nav a {
-    flex-shrink: 1;
     color: var(--text-bright);
     padding: 0.4em 1em;
     margin: 0.6em 1em 0.2em 0em;
@@ -85,7 +67,7 @@ input {
   font-family: 'Love Ya Like A Sister', serif;
   font-weight: bold;
   text-transform: uppercase;
-  font-size: 2em;
+  font-size: 250%;
 }
 
 #sub-title,
@@ -161,7 +143,7 @@ nav a:hover,
 /* styling for translated history list */
 
 #title-translate-history{
-  font-size: 2em;
+  font-size: 150%;
   color: var(--title-color);
 }
 #history-list{
@@ -189,7 +171,7 @@ nav a:hover,
   box-sizing: border-box;
 }
 footer h3 {
-  font-size: 1.5em;
+  font-size: 150%;
   margin-bottom: 0.4em;
 }
 .contact img {
