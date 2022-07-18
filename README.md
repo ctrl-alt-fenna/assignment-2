@@ -35,11 +35,17 @@ This should allow for all the functionality to work!
 * The user can clear their translation history on their profile
 * The user can logout
 * The user gets redirected to /login screen once logged out
-# Screenshots?
+
+# Screenshots
+# Login Page
+![Login Image](./screenshots/login-img.png)
+# Profile Page
+![Profile Image](./screenshots/profile-img.png)
+# Translate Page
+![Translate Image](./screenshots/translate-img.png)
 
 # Authors and Acknowledgements
-This project was created by [Linh Trieu(@linhmillion)](@linhmillion) and [Fenna Ransijn(@fransijn)](@fransijn). 
+This project was created by [Linh Trieu(@linhmillion)](@linhmillion) and [Fenna Ransijn(@fransijn)](@fransijn). Fonts used from Google Fonts.  
 
 # Project Status
 * All features completed
-* Design still in progress
