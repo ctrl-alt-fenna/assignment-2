@@ -18,7 +18,7 @@ const Footer = () => {
 				<>
           <div className="about-us">
             <h3>About us</h3>
-            <p>Enjoy talking to millions of people across the globe and learn about their cultures! Be the one who goes over the limits and breaks the language barrier! Using our web now for free!</p>
+            <p id="text-about-us">Enjoy talking to millions of people across the globe and learn about their cultures! Be the one who goes over the limits and breaks the language barrier! Using our web now for free!</p>
             <em id="copyright">Ⓒ copy right 2022</em>
           </div>
 
@@ -34,7 +34,7 @@ const Footer = () => {
               </div>
               <div className="email">
                 <img src={Email} alt="email icon"></img>
-                <p>Accelebrate@candidate.noroff.com</p>
+                <p>Accelerate@candidate.noroff.com</p>
               </div>
           </div>
 
