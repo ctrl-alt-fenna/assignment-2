@@ -166,7 +166,6 @@ footer {
   justify-content: space-around;
   width:100%;
   box-sizing: border-box;
-  justify-content:space-around;
   max-height: 22em;
   height:100%;
   padding-left:1.6em;
@@ -189,7 +188,6 @@ footer h3 {
 .about-us{
   width: auto;
   max-height: 12em;
-  /* object-fit:scale-down; */
   line-height: 2.4em;
   max-width: 40%;
 }
