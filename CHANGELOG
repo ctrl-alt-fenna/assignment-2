@@ -28,3 +28,7 @@
 * User can clear their translation history
 * Translations are updated locally and serverside for faster retrieval
 * Small styling updates
+# Version 1.5
+* Final styling
+* Added footer
+* Improved sizing of objects
