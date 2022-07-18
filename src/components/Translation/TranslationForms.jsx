@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
-import { storageRead } from '../../utils/storage'
-import { STORAGE_KEY_USER } from '../../const/storageKeys'
 import { updateTranslations } from '../../api/translate'
 import { checkForUser } from "../../api/user"
+import { storageSave } from '../../utils/storage'
+import { useUser } from '../../context/UserContext'
 import { useForm } from 'react-hook-form'
 import Signs from '../Signs/Signs'
+import { STORAGE_KEY_USER } from '../../const/storageKeys'
 const translationConfig = {
     minLength: 1
 }
@@ -12,6 +13,7 @@ const TranslationForm = () => {
     let letterArray = ['']
     let lowerCaseTranslation = ''
     const { register, handleSubmit } = useForm()
+    const {user, setUser} = useUser()
     const [translation, setTranslation] = useState('')
     // Make it possible to display loading/error states
     const [loading, setLoading] = useState(false)
@@ -23,12 +25,16 @@ const TranslationForm = () => {
     */
     const handleonSubmit = async () => {
         setLoading(true)
-        let userData = storageRead(STORAGE_KEY_USER)
-        if (userData === null) return
-        const [userError, user] = await checkForUser(userData.username)
+        const [userError, data] = await checkForUser(user.username)
         if (userError) throw new Error("Cannot retrieve userdata")
-        const { error } = await updateTranslations(user[0], translation)
+        const [error, updatedUser] = await updateTranslations(data[0], translation)
         if (error !== null) setApiError(error)
+        else {
+            storageSave(STORAGE_KEY_USER, updatedUser)
+            setUser(updatedUser)
+        }
+        console.log(updatedUser)
+
         setLoading(false)
     }
 

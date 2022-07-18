@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { STORAGE_KEY_USER } from '../../const/storageKeys';
-import { storageDelete, storageRead, storageSave } from '../../utils/storage';
+import { storageDelete, storageSave } from '../../utils/storage';
 import { useUser } from '../../context/UserContext';
 import { clearUserHistory } from '../../api/translate';
-import { checkForUser } from '../../api/user';
 import { Navigate } from 'react-router-dom'
 const ProfileAction = () => {
-	const { setUser } = useUser()
+	const { user, setUser } = useUser()
 	/*	Function to logout user from their profile
 		INPUT: None
 		OUTPUT: Clears any userdata from localstorage and redirects to login page
@@ -22,20 +21,17 @@ const ProfileAction = () => {
 	const [loading, setLoading] = useState(false)
 	const [apiError, setApiError] = useState(null)
 
+    /*  Function to clear user history on click of button
+        INPUT: Userdata from local storage
+        OUTPUT: Cleared translations and storage
+    */
 	const handleClearClick = async () => {
 		setLoading(true)
-		let userData = storageRead(STORAGE_KEY_USER)
-		if (userData === null) return
-		const [userError, user] = await checkForUser(userData.username)
-		if (userError) throw new Error("Cannot retrieve userdata")
-		const response = await clearUserHistory(user[0])
-		if (response.error !== null) setApiError(response.error)
-        const updated = await checkForUser(userData.username)
-        storageDelete(STORAGE_KEY_USER)
-        storageSave(STORAGE_KEY_USER, updated[1][0])
-        setUser(updated[1][0])
-		setLoading(false)
-
+		const [error, response] = await clearUserHistory(user)
+		if (error !== null) setApiError(error)
+        setUser(response)
+        storageSave(STORAGE_KEY_USER, response)
+        setLoading(false)
 	}
 	return (
 		<div className="profile-btns">

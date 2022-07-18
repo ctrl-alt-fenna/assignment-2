@@ -1,6 +1,22 @@
 import { createHeaders } from "."
 const apiURL = process.env.REACT_APP_API_URL
 
+/*  Function to find user by userid in database
+    INPUT: A userid
+    OUTPUT: Either the userobject or an error
+*/
+export const findUserById = async (userId) => {
+    try {
+        const response = await fetch(`${apiURL}/${userId}`)
+        if (!response.ok) throw new Error('Could not fetch user')
+        const user = await response.json()
+        return [null, user]
+    }
+    catch (error) {
+        return [error.message, null]
+    }
+}
+
 /*  Function that reads userdata from API database
     INPUT: A username to check
     OUTPUT: The userdata, or an error of user does not exist in database

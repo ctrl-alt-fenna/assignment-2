@@ -1,7 +1,6 @@
 import { createHeaders } from "."
 import { storageDelete, storageSave } from "../utils/storage"
 import { STORAGE_KEY_USER } from '../const/storageKeys';
-import { useUser } from "../context/UserContext";
 const apiURL = process.env.REACT_APP_API_URL
 /*  Function to update user-translation history
     INPUT: A userobject and a translation string
@@ -41,8 +40,6 @@ export const clearUserHistory = async (user) => {
     })
     if (!response.ok) throw new Error('Could not clear translation history')
     const result = await response.json()
-    storageDelete(STORAGE_KEY_USER)
-    storageSave(STORAGE_KEY_USER, result)
     return [null, result]
 }
   catch (error) { return [error.message, null] }
